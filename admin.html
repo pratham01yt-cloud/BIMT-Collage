@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - BIMT College</title>
+    <link rel="stylesheet" href="style.css">
+    <a href="login.php">Admin Login</a>
+</head>
+
+<body class="admin-login">
+
+    <div class="login-box">
+        <h2>Admin Login</h2>
+        <div id="loginAlert" class="alert"></div>
+        <form id="adminLoginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" required placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required placeholder="Enter password">
+            </div>
+            <button type="submit" class="btn-submit" style="margin-top: 10px;">Login</button>
+        </form>
+        <div style="text-align: center; margin-top: 20px; color: #666; font-size: 0.9rem;">
+            <p>Demo Credentials:</p>
+            <p><strong>Username:</strong> admin | <strong>Password:</strong> admin123</p>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="index.html" style="color: var(--primary);">← Back to Website</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

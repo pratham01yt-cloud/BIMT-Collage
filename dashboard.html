@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - BIMT College</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard" id="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <h3>BIMT Admin</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="#enquiries">Enquiries</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="faculty.html">Faculty</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="notices.html">Notices</a></li>
+
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">View Website</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="top-bar">
+                <h2>Dashboard Overview</h2>
+                <div>
+                    <span style="color: #666;">Welcome, Admin</span>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="dashboard-stats">
+                <div class="dash-stat primary">
+                    <h4>Total Enquiries</h4>
+                    <div class="number" id="statEnquiries">0</div>
+                </div>
+                <div class="dash-stat success">
+                    <h4>Today's Enquiries</h4>
+                    <div class="number" id="statToday">0</div>
+                </div>
+                <div class="dash-stat warning">
+                    <h4>Total Courses</h4>
+                    <div class="number" id="statCourses">4</div>
+                </div>
+                <div class="dash-stat danger">
+                    <h4>Pending Replies</h4>
+                    <div class="number" id="statPending">0</div>
+                </div>
+            </div>
+
+            <!-- Enquiries Table -->
+            <div class="table-container" id="enquiries">
+                <div class="table-header">
+                    <h3>Recent Enquiries</h3>
+                    <button class="btn btn-primary btn-sm" onclick="location.reload()">Refresh</button>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="enquiriesTable">
+                            <tr>
+                                <td colspan="6" style="text-align:center; padding: 30px;">Loading...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

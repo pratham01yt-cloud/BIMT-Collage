@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - BIMT College</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Gallery specific styles */
+        .gallery-filters {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid #007bff;
+            background: white;
+            color: #007bff;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #007bff;
+            color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 250px;
+            background: #f8f9fa;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item.hidden {
+            display: none;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 20px;
+        }
+
+        .gallery-overlay h4 {
+            margin: 0 0 5px 0;
+            font-size: 1.1rem;
+        }
+
+        .gallery-overlay p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">BIMT <span>College</span></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>                   
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                </ul>
+                <button class="mobile-menu-btn">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" style="padding: 80px 0;">
+        <div class="container">
+            <div class="hero-content">
+                <h2>College Gallery</h2>
+                <p>Glimpses of campus life, events, and facilities</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: white;">
+        <div class="container">
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="campus">Campus</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="labs">Labs</button>
+                <button class="filter-btn" data-filter="library">Library</button>
+                <button class="filter-btn" data-filter="sports">Sports</button>
+            </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Campus Images -->
+                 <div class="gallery-item" data-category="campus">
+                    <img src="Images/Collage1.jpg"
+                        alt="Campus Pathways">
+                    <div class="gallery-overlay">
+                        <h4>Main Entrance</h4>
+                        <p>Welcome BIMT College</p>
+                </div>
+                </div>
+                  <div class="gallery-item" data-category="campus">
+                    <img src="Images/bimtStudent.jpeg" alt="Green Campus">
+                    <div class="gallery-overlay">
+                        <h4>Main Building</h4>
+                        <p>Architectural excellence</p>
+                    </div>
+                <div class="gallery-item" data-category="campus">
+                    <img src="Images/collage front.jpeg" alt="Main Campus Building">
+                    <div class="gallery-overlay">
+                        <h4>Green Campus</h4>
+                        <p>Lush greenery surrounding</p>
+                    </div>
+                </div>
+               
+                </div>
+                <div class="gallery-item" data-category="campus">
+                    <img src="Images/bimtStudent2.jpeg" alt="Campus Entrance">
+                    <div class="gallery-overlay">
+                        <h4>Classroom</h4>
+                        <p>Welcome to BIMT</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="campus">
+                    <img src="Images/Collage3.jpg"
+                        alt="Campus Pathways">
+                    <div class="gallery-overlay">
+                        <h4>Campus Pathways</h4>
+                        <p>Beautiful walkways</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="campus">
+                    <img src="Images/Collage.jpg"
+                        alt="Campus Pathways">
+                    <div class="gallery-overlay">
+                        <h4>Campus Pathways</h4>
+                        <p>Beautiful walkways</p>
+                    </div>
+                </div>
+
+                <!-- Events Images -->
+                <div class="gallery-item" data-category="events">
+                    <img src="Images/Collage1.jpg"
+                        alt="Freshers Party">
+                    <div class="gallery-overlay">
+                        <h4>Main Entrance</h4>
+                        <p>Welcome BIMT College</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <img src="https://images.unsplash.com/photo-1519452635265-7b1fbfd1e891?w=400&h=300&fit=crop"
+                        alt="Annual Function">
+                    <div class="gallery-overlay">
+                        <h4>Annual Function</h4>
+                        <p>Cultural extravaganza</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop"
+                        alt="Seminar">
+                    <div class="gallery-overlay">
+                        <h4>Guest Lecture</h4>
+                        <p>Industry experts</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=300&fit=crop"
+                        alt="Workshop">
+                    <div class="gallery-overlay">
+                        <h4>Tech Workshop</h4>
+                        <p>Hands-on learning</p>
+                    </div>
+                </div>
+
+                <!-- Labs Images -->
+                <div class="gallery-item" data-category="labs">
+                    <img src="https://images.unsplash.com/photo-1558494949-efed5b913df0?w=400&h=300&fit=crop"
+                        alt="Computer Lab">
+                    <div class="gallery-overlay">
+                        <h4>Computer Lab</h4>
+                        <p>Latest technology</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="labs">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop"
+                        alt="Electronics Lab">
+                    <div class="gallery-overlay">
+                        <h4>Electronics Lab</h4>
+                        <p>Advanced equipment</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="labs">
+                    <img src="https://images.unsplash.com/photo-1558618047-3c8c76fdd9e4?w=400&h=300&fit=crop"
+                        alt="Physics Lab">
+                    <div class="gallery-overlay">
+                        <h4>Physics Lab</h4>
+                        <p>Scientific experiments</p>
+                    </div>
+                </div>
+
+                <!-- Library Images -->
+                <div class="gallery-item" data-category="library">
+                    <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop"
+                        alt="Library">
+                    <div class="gallery-overlay">
+                        <h4>Central Library</h4>
+                        <p>20,000+ books</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="library">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop"
+                        alt="Reading Room">
+                    <div class="gallery-overlay">
+                        <h4>Reading Room</h4>
+                        <p>Quiet study area</p>
+                    </div>
+                </div>
+
+                <!-- Sports Images -->
+                <div class="gallery-item" data-category="sports">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop"
+                        alt="Cricket Ground">
+                    <div class="gallery-overlay">
+                        <h4>Cricket Ground</h4>
+                        <p>Professional turf</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="sports">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop"
+                        alt="Basketball Court">
+                    <div class="gallery-overlay">
+                        <h4>Basketball Court</h4>
+                        <p>Indoor facility</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="sports">
+                    <img src="https://images.unsplash.com/photo-1579952363873-27d3bfad9c7f?w=400&h=300&fit=crop"
+                        alt="Gym">
+                    <div class="gallery-overlay">
+                        <h4>Fitness Center</h4>
+                        <p>Modern equipment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About BIMT</h4>
+                    <p>BIMT College is a leading institution providing quality education in management and technology
+                        since 2005.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="courses.html">Courses</a>
+                    <a href="gallery.html">Gallery</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Courses</h4>
+                   <a href="courses.html">BCA</a>
+                    <a href="courses.html">BBA</a>
+                    <a href="courses.html">BSC</a>
+                    <a href="courses.html">BCom</a>
+                     <a href="courses.html">Msc</a>
+                    <a href="courses.html">MCom</a>
+                    <a href="courses.html">D.El.Ed</a>
+                    <a href="courses.html">B.Ed</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>Kakrala Road</p>
+                    <p>Badaun City, Uttar Pradesh</p>
+                    <p>+91 9897777709</p>
+                    <p>bimtbadaun@yahoo.in</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BIMT College. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Gallery filter functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        const itemCategory = item.getAttribute('data-category');
+
+                        if (filterValue === 'all' || itemCategory === filterValue) {
+                            item.style.display = 'block';
+                            item.classList.remove('hidden');
+                        } else {
+                            item.style.display = 'none';
+                            item.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
